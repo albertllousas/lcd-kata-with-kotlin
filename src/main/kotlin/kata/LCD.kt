@@ -7,8 +7,17 @@ object LCD {
                         >  |
                         >  |
                         """.trimMargin(">")
+    private val two = """  
+                        > _  
+                        > _|
+                        >|_
+                        """.trimMargin(">")
 
     fun convert(number: Int): String {
-        return one
+        return when (number) {
+            1 -> one
+            2 -> two
+            else -> TODO()
+        }
     }
 }

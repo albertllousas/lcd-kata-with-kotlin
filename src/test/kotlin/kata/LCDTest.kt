@@ -15,4 +15,15 @@ class LCDTest {
                         >  |
                         """.trimMargin(">")
     }
+
+    @Test
+    fun `should convert 2 in to LCD styled number`() {
+        val result = LCD.convert(number = 2)
+
+        result shouldBe """  
+                        > _  
+                        > _|
+                        >|_
+                        """.trimMargin(">")
+    }
 }
