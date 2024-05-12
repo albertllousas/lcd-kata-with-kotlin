@@ -79,6 +79,13 @@ class LCDTest {
                         >| |
                         >|_|
                         """.trimMargin(">")
+            ),
+            Pair(
+                12, """  
+                        >    _ 
+                        >  | _|
+                        >  ||_ 
+                        """.trimMargin(">")
             )
         ).map { (number, expected) ->
             dynamicTest("should convert $number") {

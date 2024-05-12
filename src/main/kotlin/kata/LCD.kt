@@ -1,5 +1,7 @@
 package kata
 
+import kata.LCD.lcdNumbers
+
 object LCD {
 
     private val lcdNumbers = mapOf(
@@ -16,6 +18,17 @@ object LCD {
     )
 
     fun convert(number: Int): String {
-        return lcdNumbers[number] ?: TODO()
+        val chars = number.toString().toCharArray()
+        return if (chars.size == 1)
+            lcdNumbers[number]!!
+        else if (chars.size == 2) {
+            // first number = chars fst pos from map
+            // second number = chars snd pos from map
+            // first line -> fst 3 digits first number + fst 3 digits second number
+            // second line -> fst 3 digits first number after first \n + fst 3 digits second number after first \n
+            // third line -> fst 3 digits first number after second \n + fst 3 digits second number after second \n
+            // join three lines string with new line chars
+            ""
+        } else TODO()
     }
 }
