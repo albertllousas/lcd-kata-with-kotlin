@@ -23,6 +23,63 @@ class LCDTest {
                         >|_
                         """.trimMargin(">")
             )
+            ,
+            Pair(
+                3, """  
+                        > _  
+                        > _|
+                        > _|
+                        """.trimMargin(">")
+            ),
+            Pair(
+                4, """  
+                        >  
+                        >|_|
+                        >  |
+                        """.trimMargin(">")
+            ),
+            Pair(
+                5, """  
+                        > _  
+                        >|_ 
+                        > _|
+                        """.trimMargin(">")
+            ),
+            Pair(
+                6, """  
+                        > _  
+                        >|_ 
+                        >|_|
+                        """.trimMargin(">")
+            ),
+            Pair(
+                7, """  
+                        > _  
+                        >  |
+                        >  |
+                        """.trimMargin(">")
+            ),
+            Pair(
+                8, """  
+                        > _  
+                        >|_|
+                        >|_|
+                        """.trimMargin(">")
+            ),
+            Pair(
+                9, """  
+                        > _  
+                        >|_|
+                        >  |
+                        """.trimMargin(">")
+            ),
+            Pair(
+                0, """  
+                        > _  
+                        >| |
+                        >|_|
+                        """.trimMargin(">")
+            )
         ).map { (number, expected) ->
             dynamicTest("should convert $number") {
                 LCD.convert(number) shouldBe expected
