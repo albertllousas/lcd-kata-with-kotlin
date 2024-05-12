@@ -2,7 +2,7 @@ package kata
 
 object LCD {
 
-    private val lcdNumbers = mapOf(
+    private val numberLcdMap = mapOf(
         1 to "   \n  |\n  |",
         2 to " _ \n _|\n|_ ",
         3 to " _ \n _|\n _|",
@@ -16,12 +16,11 @@ object LCD {
     )
 
     fun convert(number: Int): String {
-        val chars = number.toString().toCharArray()
-        val numbers = chars.map { lcdNumbers[it.digitToInt()]!! }
-        val firstLine = numbers.map { it: String -> "${it[0]}${it[1]}${it[2]}" }.joinToString("")
-        val secondLine = numbers.map { it: String -> "${it[4]}${it[5]}${it[6]}" }.joinToString("")
-        val thirdLine = numbers.map { it: String -> "${it[8]}${it[9]}${it[10]}" }.joinToString("")
-        return "$firstLine\n$secondLine\n$thirdLine"
+        val numberAsLCD: List<String> = number.toString().map { digit -> numberLcdMap[digit.digitToInt()]!! }
+        val firstLineOfEachNumber = numberAsLCD.map { it.substringBefore("\n") }.joinToString("")
+        val secondLineOfEachNumber = numberAsLCD.map { it.substringAfter("\n").substringBefore("\n") }.joinToString("")
+        val thirdLineOfEachNumber = numberAsLCD.map { it.substringAfterLast("\n") }.joinToString("")
+        return "$firstLineOfEachNumber\n$secondLineOfEachNumber\n$thirdLineOfEachNumber"
     }
 }
 
