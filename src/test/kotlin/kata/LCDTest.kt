@@ -1,29 +1,31 @@
 package kata
 
 import io.kotest.matchers.shouldBe
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.DynamicTest.dynamicTest
+import org.junit.jupiter.api.TestFactory
 
 class LCDTest {
 
-    @Test
-    fun `should convert 1 in to LCD styled number`() {
-        val result = LCD.convert(number = 1)
-
-        result shouldBe """  
+    @TestFactory
+    fun `converting numbers in to LCD styled number`() =
+        listOf(
+            Pair(
+                1, """  
                         >  
                         >  |
                         >  |
                         """.trimMargin(">")
-    }
-
-    @Test
-    fun `should convert 2 in to LCD styled number`() {
-        val result = LCD.convert(number = 2)
-
-        result shouldBe """  
+            ),
+            Pair(
+                2, """  
                         > _  
                         > _|
                         >|_
                         """.trimMargin(">")
-    }
+            )
+        ).map { (number, expected) ->
+            dynamicTest("should convert $number") {
+                LCD.convert(number) shouldBe expected
+            }
+        }
 }
