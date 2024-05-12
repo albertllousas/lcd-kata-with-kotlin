@@ -39,13 +39,11 @@ object LCD {
             val result = "$firstLine\n$secondLine\n$thirdLine"
             result
         } else {
-            // approach:
-            // matrix = create a matrix, each row would be one number as string
-            // first line = concat 0,1,2 elements of each row of the matrix
-            // second line = concat 4,5,6 elements of each row of the matrix
-            // third line = concat 8,9,10 elements of each row of the matrix
-            // join three lines with new lines
-            ""
+            val numbers = chars.map { lcdNumbers[it.digitToInt()]!! }
+            val firstLine = numbers.map { it: String -> "${it[0]}${it[1]}${it[2]}" }.joinToString("")
+            val secondLine = numbers.map { it: String -> "${it[4]}${it[5]}${it[6]}" }.joinToString("")
+            val thirdLine = numbers.map { it: String -> "${it[8]}${it[9]}${it[10]}" }.joinToString("")
+            "$firstLine\n$secondLine\n$thirdLine"
         }
     }
 }
