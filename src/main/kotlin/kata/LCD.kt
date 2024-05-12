@@ -22,13 +22,17 @@ object LCD {
         return if (chars.size == 1)
             lcdNumbers[number]!!
         else if (chars.size == 2) {
-            // first number = chars fst pos from map
-            // second number = chars snd pos from map
-            // first line -> fst 3 digits first number + fst 3 digits second number
-            // second line -> fst 3 digits first number after first \n + fst 3 digits second number after first \n
-            // third line -> fst 3 digits first number after second \n + fst 3 digits second number after second \n
-            // join three lines string with new line chars
-            ""
+            val fstNumber = lcdNumbers[chars[0].digitToInt()]!!
+            val sndNumber = lcdNumbers[chars[1].digitToInt()]!!
+            val firstLine = "${fstNumber[0]}${fstNumber[1]}${fstNumber[2]}${sndNumber[0]}${sndNumber[1]}${sndNumber[2]}"
+            val secondLine = "${fstNumber[4]}${fstNumber[5]}${fstNumber[6]}${sndNumber[4]}${sndNumber[5]}${sndNumber[6]}"
+            val thirdLine = "${fstNumber[8]}${fstNumber[9]}${fstNumber[10]}${sndNumber[8]}${sndNumber[9]}${sndNumber[10]}"
+            val result = "$firstLine\n$secondLine\n$thirdLine"
+            result
         } else TODO()
     }
 }
+
+
+
+
