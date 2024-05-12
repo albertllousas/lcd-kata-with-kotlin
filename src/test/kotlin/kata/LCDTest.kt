@@ -11,71 +11,71 @@ class LCDTest {
         listOf(
             Pair(
                 1, """  
-                        >  
+                        >   
                         >  |
                         >  |
                         """.trimMargin(">")
             ),
             Pair(
                 2, """  
-                        > _  
+                        > _ 
                         > _|
-                        >|_
+                        >|_ 
                         """.trimMargin(">")
             )
             ,
             Pair(
                 3, """  
-                        > _  
+                        > _ 
                         > _|
                         > _|
                         """.trimMargin(">")
             ),
             Pair(
                 4, """  
-                        >  
+                        >   
                         >|_|
                         >  |
                         """.trimMargin(">")
             ),
             Pair(
                 5, """  
-                        > _  
+                        > _ 
                         >|_ 
                         > _|
                         """.trimMargin(">")
             ),
             Pair(
                 6, """  
-                        > _  
+                        > _ 
                         >|_ 
                         >|_|
                         """.trimMargin(">")
             ),
             Pair(
                 7, """  
-                        > _  
+                        > _ 
                         >  |
                         >  |
                         """.trimMargin(">")
             ),
             Pair(
                 8, """  
-                        > _  
+                        > _ 
                         >|_|
                         >|_|
                         """.trimMargin(">")
             ),
             Pair(
                 9, """  
-                        > _  
+                        > _ 
                         >|_|
                         >  |
                         """.trimMargin(">")
             ),
             Pair(
                 0, """  
-                        > _  
+                        > _ 
                         >| |
                         >|_|
                         """.trimMargin(">")
